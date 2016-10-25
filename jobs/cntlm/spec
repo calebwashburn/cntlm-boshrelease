@@ -1,0 +1,20 @@
+---
+name: cntlm
+templates:
+  bin/cntlm_ctl: bin/cntlm_ctl
+  bin/job_properties.sh.erb: bin/job_properties.sh
+  config/cntlm.conf.erb: config/cntlm.conf
+
+packages:
+  - bosh-helpers
+  - cntlm
+
+properties:
+  cntlm.username:
+    description: "Username to use for NTLM proxy"
+  cntlm.password:
+    description: "Password to use for NTLM proxy"
+  cntlm.domain:
+    description: "Domain to use for NTLM proxy"
+  cntlm.proxy:
+    description: "Proxy server and port example 10.0.0.0:8080"

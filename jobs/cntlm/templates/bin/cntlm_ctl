@@ -1,0 +1,37 @@
+#!/bin/bash
+
+set -e # exit immediately if a simple command exits with a non-zero status
+
+# Setup common env vars and folders
+source /var/vcap/packages/bosh-helpers/ctl_setup.sh 'cntlm'
+export CNTLM_PID_FILE=${CNTLM_PID_DIR}/cntlm.pid
+
+export PATH=/var/vcap/packages/cntlm:$PATH
+
+case $1 in
+
+  start)
+    pid_guard ${CNTLM_PID_FILE} ${JOB_NAME}
+    echo $$ > ${CNTLM_PID_FILE}
+
+    # We remove the PID file (own process) to prevent a collision with Unicorn
+    rm -fr ${CNTLM_PID_FILE}
+
+    # start cntlm
+    cntlm -P ${CNTLM_PID_FILE} -c /var/vcap/jobs/cntlm/config/cntlm.conf
+
+    echo $PID > ${CNTLM_PID_FILE}
+    ;;
+
+  stop)
+    # Stop DOCKER_VOLUME_NETSHARE
+    kill_and_wait ${CNTLM_PID_FILE}
+    ;;
+
+  *)
+    echo "Usage: $0 {start|stop}"
+    exit 1
+    ;;
+
+esac
+exit 0

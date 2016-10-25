@@ -1,0 +1,5 @@
+---
+name: cntlm
+dependencies: []
+files:
+  - cntlm/*
