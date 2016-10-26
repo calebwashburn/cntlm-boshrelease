@@ -18,3 +18,5 @@ properties:
     description: "Domain to use for NTLM proxy"
   cntlm.proxy:
     description: "Proxy server and port example 10.0.0.0:8080"
+  cntlm.no_proxy:
+    description: "comma delimited list of no proxy options"
