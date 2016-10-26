@@ -1,0 +1,25 @@
+---
+packages:
+- name: bosh-helpers
+  version: f469b9d9cd643a3e706ca661deea572de6e522b4
+  fingerprint: f469b9d9cd643a3e706ca661deea572de6e522b4
+  sha1: 9e818f8a5a1333147e770e215513e573bd0435fc
+  dependencies: []
+- name: cntlm
+  version: 9bfc6d29b5379e7ff0c596d25d4afe06494e393a
+  fingerprint: 9bfc6d29b5379e7ff0c596d25d4afe06494e393a
+  sha1: 02e76a2d99b23e698bbfef6d6f38045c50c08cc6
+  dependencies: []
+jobs:
+- name: cntlm
+  version: 1edbb7073503ea40eefda789addba6d6b7a4e728
+  fingerprint: 1edbb7073503ea40eefda789addba6d6b7a4e728
+  sha1: 46738cfaaa29ded77ad6340c116755826c5ee834
+license:
+  version: e6c4ccc65c76e75e2338d1edabdcf264d37ee663
+  fingerprint: e6c4ccc65c76e75e2338d1edabdcf264d37ee663
+  sha1: e7e1be2efe3fa120e3753958d4da84f0cfd27a8a
+commit_hash: d03720ad
+uncommitted_changes: true
+name: cntlm
+version: '2'
